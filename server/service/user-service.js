@@ -4,11 +4,12 @@ const uuid = require('uuid');
 const MailService = require('./mail-service');
 const TokenServise = require('./token-service');
 const UserDto = require('../dtos/user-dto');
-const ApiError = require('../exception/api-error')
+const ApiError = require('../exception/api-error');
 
 class UserService {
   async registration(email, password) {
-    const candidate = await User.findOne({ email });
+    console.log(email, '888888888888888888888888');
+    const candidate = await User.findOne({ where: { email } });
     if (candidate) {
       throw ApiError.BadRequest(`Пользователь с почтой ${email} уже существует`);
     }
