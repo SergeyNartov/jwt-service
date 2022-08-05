@@ -1,0 +1,9 @@
+PORT=3000
+JWT_ACCESS_SECRET=jwt-key
+JWT_REFRESH_SECRET=jwt-refresh-key
+SMTP_HOST= // сервер исходящей почты в ""("smtp.rambler.ru")
+SMTP_PORT= // порт исходящей почты
+SMTP_USER= // адрес электронной почты с которой будет отправка
+SMTP_PASSWORD= // пароль почты с которой будет отправка
+API_URL= http://localhost:3000
+CLIENT_URL=https://www.google.com/
