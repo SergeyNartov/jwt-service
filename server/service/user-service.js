@@ -73,7 +73,7 @@ class UserService {
     if (!userData || !tokenFromDb) {
       throw ApiError.UnauthorizedError();
     }
-    const user = await User.findByPk(userData.id)
+    const user = await User.findByPk(userData.id);
     const userDto = new UserDto(user);
     const tokens = TokenService.generateToken({ ...userDto });
     await TokenService.saveToken(userDto.id, tokens.refreshToken);
@@ -84,6 +84,10 @@ class UserService {
       user: userDto,
     };
   }
+
+  async getAllUsers() {
+    const users = await User.findAll();
+    return users;
+  }
 }
 module.exports = new UserService();
-US;
