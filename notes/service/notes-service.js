@@ -20,7 +20,20 @@ class NotesService {
     }
     note.content = newContent;
     await note.save();
-    return note
+    return note;
+  }
+
+  async destroy(userId, noteId) {
+    const note = await Notes.findOne({ where: { id: noteId } });
+    const userIdNote = note.dataValues.user_id;
+    if (userId !== userIdNote) {
+      return ApiError.UnauthorizedError();
+    }
+    const result = await Notes.destroy({
+      where:
+        { id: noteId },
+    });
+    return result;
   }
 }
 

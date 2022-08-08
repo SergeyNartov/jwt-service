@@ -28,7 +28,18 @@ class NotesController {
       const { newContent } = req.body;
       const noteId = req.params.id;
       const noteUpdate = await NotesService.update(userId, noteId, newContent);
-      return res.json(noteUpdate)
+      return res.json(noteUpdate);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async destroy(req, res, next) {
+    try {
+      const userId = req.user.id;
+      const noteId = req.params.id;
+      const destoyNote = await NotesService.destroy(userId, noteId);
+      res.json(destoyNote);
     } catch (error) {
       next(error);
     }

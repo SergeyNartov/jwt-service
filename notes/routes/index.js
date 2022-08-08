@@ -7,6 +7,6 @@ const authMiddleware = require('../middlewares/auth-middleware');
 router.get('/', authMiddleware, NotesController.allNotesUser);
 router.post('/', authMiddleware, NotesController.create);
 router.put('/:id', authMiddleware, NotesController.update);
-router.delete('/:id');
+router.delete('/:id', authMiddleware, NotesController.destroy);
 
 module.exports = router;
