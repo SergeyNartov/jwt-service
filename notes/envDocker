@@ -1,0 +1,6 @@
+PORT=3002
+JWT_ACCESS_SECRET=jwt-key
+DB_NAME=notes_db
+DB_USER=postgres
+DB_PASS=mysecretpassword
+DB_PORT=4003

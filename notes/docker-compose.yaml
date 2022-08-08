@@ -1,0 +1,12 @@
+version: "3"
+services:
+  testdb:
+    image: postgres
+    restart: always
+    container_name: notes_db
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=mysecretpassword"
+      - "POSTGRES_DB=notes_db"
+    ports:
+      - 4003:5432

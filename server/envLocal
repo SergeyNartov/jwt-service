@@ -1,0 +1,13 @@
+PORT=3000
+JWT_ACCESS_SECRET=jwt-key
+JWT_REFRESH_SECRET=jwt-refresh-key
+SMTP_HOST="smtp.rambler.ru"
+SMTP_PORT=465
+SMTP_USER=
+SMTP_PASSWORD=
+API_URL= http://localhost:3000
+CLIENT_URL=https://www.google.com/
+DB_NAME=test
+DB_USER=admin
+DB_PASS=51035
+DB_PORT=
