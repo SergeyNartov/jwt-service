@@ -4,9 +4,9 @@ const NotesController = require('../controllers/notes-controller');
 const router = new Router();
 const authMiddleware = require('../middlewares/auth-middleware');
 
-router.get('/');
+router.get('/', authMiddleware, NotesController.allNotesUser);
 router.post('/', authMiddleware, NotesController.create);
-router.put('/:id');
+router.put('/:id', authMiddleware, NotesController.update);
 router.delete('/:id');
 
 module.exports = router;
