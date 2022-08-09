@@ -5,6 +5,15 @@ const router = new Router();
 const { body } = require('express-validator');
 const authMiddleware = require('../middlewares/auth-middleware');
 
+/**
+  * @openapi
+  * /registration:
+  *   get:
+  *     description: Регистрация
+  *     responses:
+  *       200:
+  *         description: Успешно зарегестрирован.
+  */
 router.post(
   '/registration',
   body('email').isEmail(),
