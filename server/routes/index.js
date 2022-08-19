@@ -8,11 +8,48 @@ const authMiddleware = require('../middlewares/auth-middleware');
 /**
   * @openapi
   * /registration:
-  *   get:
-  *     description: Регистрация
+  *   post:
+  *     consumes:
+  *       application/json
+  *     parameters:
+  *       - in: body
+  *         name: body
+  *         schema:
+  *           type: object
+  *           properties:
+  *             email:
+  *               type: string
+  *               format: email
+  *             password:
+  *               type: string
+  *               format: password
+  *     produces:
+  *       - application/json
+  *     description: New user registration
   *     responses:
   *       200:
-  *         description: Успешно зарегестрирован.
+  *         description: Success
+  *         schema:
+  *           type: object
+  *           properties:
+  *             accessToken:
+  *               type: string
+  *             refreshToken:
+  *               type: string
+  *             user:
+  *               type: object
+  *               properties:
+  *                 email:
+  *                   type: string
+  *                   format: email
+  *                 id:
+  *                   type: integer
+  *                 isActivated:
+  *                   type: boolean
+  *       400:
+  *         description: Validation error
+  *       500:
+  *         description: Server internal error
   */
 router.post(
   '/registration',

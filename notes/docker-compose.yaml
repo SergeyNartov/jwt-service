@@ -9,4 +9,4 @@ services:
       - "POSTGRES_PASSWORD=mysecretpassword"
       - "POSTGRES_DB=notes_db"
     ports:
-      - 4003:5432
+      - 4002:5432
