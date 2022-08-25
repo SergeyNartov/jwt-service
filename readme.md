@@ -1,6 +1,34 @@
-Service User 3000 port
-Postgres User 4001 port
+# JWT-SERVICE
 
-Service Notes 3001 port
-Postgres Notes_db 4002 port
+## Добро пожаловать в мой проект
+
+Это мой PET-проект в котором реализовано:
+* Регистрация и авторизация с применением JSON Web Token(JWT);
+* Подтверждение элетронной почты;
+* CRUD для заметок(сервис заметок доступен только c JWT);
+* Добавлен Swagger;
+
+#### В данном приложении есть возможность запустить проект как на локальном компьютере так и с применением Docker.
+
+Запуск приложения на локальном компьютере:
+1. Склонировать репозиторий.
+2. Установить docker: https://docs.docker.com/engine/install/
+3. Установить docker compose: https://docs.docker.com/compose/install/
+4. Запуск сервера:
+  а) Отрыть терминал в папке  server;
+  б) Выполнить команду npm install;
+  в) Выполнить команду sudo docker-compose up -d;
+  г) Выполнить команду npx sequelize db:migrate;
+  д) Выполнить команду npm start.
+3. Запуск клиента:
+  а) Отрыть терминал в папке  graffiti-place-public/client;
+  б) Выполнить команду npm install;
+  в) Выполнить команду npm start.
+
+
+
+
+
+
+
 

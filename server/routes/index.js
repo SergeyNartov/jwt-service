@@ -57,10 +57,15 @@ router.post(
   body('password').isLength({ min: 3, max: 32 }),
   userController.registration,
 );
+// TODO create swagger
 router.post('/login', userController.login);
+// TODO create swagger
 router.post('/logout', userController.logout);
+// TODO create swagger
 router.get('/activate/:link', userController.activate);
+// TODO create swagger
 router.get('/refresh', userController.refresh);
+// TODO create swagger
 router.get('/users', authMiddleware, userController.getUsers);
 
 module.exports = router;
