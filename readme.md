@@ -12,19 +12,23 @@
 
 Запуск приложения на локальном компьютере:
 1. Склонировать репозиторий.
-2. Установить docker: https://docs.docker.com/engine/install/
-3. Установить docker compose: https://docs.docker.com/compose/install/
-4. Запуск сервера:
-  а) Отрыть терминал в папке  server;
-  б) Выполнить команду npm install;
-  в) Выполнить команду sudo docker-compose up -d;
+2. Запуск сервиса User:
+  а) Отрыть терминал в папке server;
+  б) Заполнить файл envLocal данными своей базы данных и переименовать файл в .env
+  в) Выполнить команду npm install;
   г) Выполнить команду npx sequelize db:migrate;
   д) Выполнить команду npm start.
-3. Запуск клиента:
-  а) Отрыть терминал в папке  graffiti-place-public/client;
-  б) Выполнить команду npm install;
-  в) Выполнить команду npm start.
+  е) Swagger доступен по url http:\\"yourLocalHost"\swagger-ui
+3. Запуск сервиса Notes:
+  a) Заполнить файл envLocal данными своей базы данных и переименовать файл в .env
+  б) Отрыть терминал в папке notes;
+  в) Выполнить команду npm install;
+  г) Выполнить команду npx sequelize db:migrate; 
+  д) Выполнить команду npm start.
 
+2. Установить docker: https://docs.docker.com/engine/install/
+3. Установить docker compose: https://docs.docker.com/compose/install/
+  в) Выполнить команду sudo docker-compose up -d;
 
 
 
